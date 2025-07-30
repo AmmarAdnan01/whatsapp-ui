@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Web Clone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid h-100 p-0">
+        <div class="row h-100 g-0">
+            <!-- Left Sidebar -->
+            <div class="col-4 bg-dark-sidebar border-end border-secondary">
+                <!-- Header -->
+                <div class="d-flex justify-content-between align-items-center p-3 border-bottom border-secondary">
+                    <h5 class="text-white mb-0">Chats</h5>
+                    <div class="d-flex gap-2">
+                        <i class="bi bi-chat-square text-light"></i>
+                        <i class="bi bi-three-dots-vertical text-light"></i>
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="p-3 border-bottom border-secondary">
+                    <div class="input-group">
+                        <span class="input-group-text bg-dark-input border-0">
+                            <i class="bi bi-search text-muted"></i>
+                        </span>
+                        <input type="text" class="form-control bg-dark-input border-0 text-light" 
+                               placeholder="Search or start a new chat">
+                    </div>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div class="d-flex gap-2 p-3 border-bottom border-secondary">
+                    <span class="badge bg-success rounded-pill px-3 py-2">All</span>
+                    <span class="badge bg-secondary rounded-pill px-3 py-2">Unread</span>
+                    <span class="badge bg-secondary rounded-pill px-3 py-2">Favourites</span>
+                    <span class="badge bg-secondary rounded-pill px-3 py-2">Groups</span>
+                </div>
+
+                <!-- Chat List -->
+                <div class="chat-list">
+                    <!-- Current User -->
+                    <div class="chat-item p-3 border-bottom border-secondary active" onclick="selectChat('ammar')">
+                        <div class="d-flex align-items-center">
+                            <div class="avatar-container me-3">
+                                <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop" 
+                                     class="rounded-circle" width="50" height="50" alt="Profile">
+                            </div>
+                            <div class="flex-grow-1">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="text-white mb-0">Ammar Adnan (You)</h6>
+                                        <p class="text-muted small mb-0">
+                                            <i class="bi bi-check-all text-primary me-1"></i>
+                                            remove social icons place button on ups sy...
+                                        </p>
+                                    </div>
+                                    <div class="text-end">
+                                        <small class="text-muted">Yesterday</small>
+                                        <div class="mt-1">
+                                            <i class="bi bi-pin-angle-fill text-muted"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Akhteer Ilyas -->
+                    <div class="chat-item p-3 border-bottom border-secondary" onclick="selectChat('akhteer')">
+                        <div class="d-flex align-items-center">
+                            <div class="avatar-container me-3">
+                                <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop" 
+                                     class="rounded-circle" width="50" height="50" alt="Profile">
+                            </div>
+                            <div class="flex-grow-1">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="text-white mb-0">Akhteer Ilyas</h6>
+                                        <p class="text-muted small mb-0">
+                                            <i class="bi bi-telephone text-success me-1"></i>
+                                            Voice call
+                                        </p>
+                                    </div>
+                                    <small class="text-muted">10:18 am</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Group Chat -->
+                    <div class="chat-item p-3 border-bottom border-secondary" onclick="selectChat('tid-group')">
+                        <div class="d-flex align-items-center">
+                            <div class="avatar-container me-3">
+                                <div class="group-avatar bg-secondary rounded-circle d-flex align-items-center justify-content-center" 
+                                     style="width: 50px; height: 50px;">
+                                    <i class="bi bi-people text-white"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="text-white mb-0">TID Website Coordination March 16...</h6>
+                                        <p class="text-muted small mb-0">
+                                            ~ Muhammad Shahid: Assalam O Alykum 'Goo...
+                                        </p>
+                                    </div>
+                                    <div class="text-end">
+                                        <small class="text-success">10:37 am</small>
+                                        <div class="mt-1">
+                                            <span class="badge bg-success rounded-circle">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- A-M-F MARDO 3 -->
+                    <div class="chat-item p-3 border-bottom border-secondary" onclick="selectChat('mardo-group')">
+                        <div class="d-flex align-items-center">
+                            <div class="avatar-container me-3">
+                                <div class="group-avatar bg-secondary rounded-circle d-flex align-items-center justify-content-center" 
+                                     style="width: 50px; height: 50px;">
+                                    <i class="bi bi-people text-white"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="text-white mb-0">A-M-F MARDO 3</h6>
+                                        <p class="text-muted small mb-0">
+                                            ~ Al Mohallatul Fakhira: <i class="bi bi-camera text-success"></i> A FUN FILLED DAY ...
+                                            <i class="bi bi-pin-angle-fill text-muted ms-1"></i>
+                                        </p>
+                                    </div>
+                                    <small class="text-muted">10:12 am</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skitmedia Design Team -->
+                    <div class="chat-item p-3 border-bottom border-secondary" onclick="selectChat('skitmedia-group')">
+                        <div class="d-flex align-items-center">
+                            <div class="avatar-container me-3">
+                                <div class="group-avatar bg-secondary rounded-circle d-flex align-items-center justify-content-center" 
+                                     style="width: 50px; height: 50px;">
+                                    <i class="bi bi-people text-white"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="text-white mb-0">Skitmedia Design Team</h6>
+                                        <p class="text-muted small mb-0">Akhteer Ilyas ↻ Zeshan joining</p>
+                                    </div>
+                                    <small class="text-muted">9:01 am</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- More chat items -->
+                    <div class="chat-item p-3 border-bottom border-secondary" onclick="selectChat('mota')">
+                        <div class="d-flex align-items-center">
+                            <div class="avatar-container me-3">
+                                <img src="https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop" 
+                                     class="rounded-circle" width="50" height="50" alt="Profile">
+                            </div>
+                            <div class="flex-grow-1">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="text-white mb-0">Mota</h6>
+                                        <p class="text-muted small mb-0">
+                                            <i class="bi bi-emoji-smile text-warning me-1"></i>
+                                            Sticker
+                                        </p>
+                                    </div>
+                                    <small class="text-muted">1:48 am</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-item p-3 border-bottom border-secondary" onclick="selectChat('izhan')">
+                        <div class="d-flex align-items-center">
+                            <div class="avatar-container me-3">
+                                <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop" 
+                                     class="rounded-circle" width="50" height="50" alt="Profile">
+                            </div>
+                            <div class="flex-grow-1">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="text-white mb-0">Izhan Kashif</h6>
+                                        <p class="text-muted small mb-0">
+                                            <i class="bi bi-check-all text-primary me-1"></i>
+                                            Kya bhai?
+                                        </p>
+                                    </div>
+                                    <small class="text-muted">1:41 am</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-item p-3 border-bottom border-secondary" onclick="selectChat('murtaza')">
+                        <div class="d-flex align-items-center">
+                            <div class="avatar-container me-3">
+                                <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop" 
+                                     class="rounded-circle" width="50" height="50" alt="Profile">
+                            </div>
+                            <div class="flex-grow-1">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="text-white mb-0">Murtaza Ali</h6>
+                                        <p class="text-muted small mb-0">
+                                            <i class="bi bi-telephone text-success me-1"></i>
+                                            Voice call
+                                        </p>
+                                    </div>
+                                    <small class="text-muted">1:30 am</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Chat Area -->
+            <div class="col-8 bg-dark-chat d-flex flex-column">
+                <!-- Chat Header -->
+                <div id="chat-header" class="chat-header p-3 border-bottom border-secondary d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <img id="chat-avatar" src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop" 
+                             class="rounded-circle me-3" width="40" height="40" alt="Profile">
+                        <div>
+                            <h6 id="chat-name" class="text-white mb-0">Ammar Adnan (You)</h6>
+                            <small id="chat-status" class="text-muted">Message yourself</small>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <i class="bi bi-search text-light"></i>
+                        <i class="bi bi-three-dots-vertical text-light"></i>
+                    </div>
+                </div>
+
+                <!-- Chat Messages -->
+                <div id="chat-messages" class="chat-messages flex-grow-1 p-3">
+                    <!-- Messages will be loaded dynamically -->
+                </div>
+
+                <!-- Message Input -->
+                <div class="message-input p-3 border-top border-secondary">
+                    <div class="input-group">
+                        <button class="btn btn-outline-secondary border-0">
+                            <i class="bi bi-plus-lg text-muted"></i>
+                        </button>
+                        <input type="text" class="form-control bg-dark-input border-0 text-light" 
+                               placeholder="Type a message">
+                        <button class="btn btn-outline-secondary border-0">
+                            <i class="bi bi-emoji-smile text-muted"></i>
+                        </button>
+                        <button class="btn btn-outline-secondary border-0">
+                            <i class="bi bi-mic text-muted"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Chat data for different conversations
+        const chatData = {
+            'ammar': {
+                name: 'Ammar Adnan (You)',
+                status: 'Message yourself',
+                avatar: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop',
+                messages: [
+                    { type: 'date', content: '19/07/2025' },
+                    { type: 'sent', content: 'test', time: '2:55 pm' },
+                    { type: 'date', content: '22/07/2025' },
+                    { type: 'sent', content: 'Test', time: '3:36 pm' },
+                    { type: 'date', content: 'Sunday' },
+                    { type: 'sent', content: 'eids@newemails123@@', time: '6:46 am' },
+                    { type: 'date', content: 'Monday' },
+                    { type: 'date', content: 'Yesterday' },
+                    { type: 'sent', content: '<strong>remove social icons</strong><br>place button on ups systems page with UPS Brochure<br>remove image over Empowering Projects with Proven Electrical Solutions section on services page', time: '6:12 pm', isLong: true }
+                ]
+            },
+            'akhteer': {
+                name: 'Akhteer Ilyas',
+                status: 'last seen today at 10:18 am',
+                avatar: 'https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop',
+                messages: [
+                    { type: 'date', content: 'Today' },
+                    { type: 'received', content: 'Hey! How are you doing?', time: '9:30 am' },
+                    { type: 'sent', content: 'I\'m good, thanks! How about you?', time: '9:32 am' },
+                    { type: 'received', content: 'All good here. Working on the new project.', time: '9:35 am' },
+                    { type: 'sent', content: 'That sounds great! Let me know if you need any help.', time: '9:40 am' },
+                    { type: 'call', content: 'Voice call', time: '10:18 am', incoming: false }
+                ]
+            },
+            'tid-group': {
+                name: 'TID Website Coordination March 16...',
+                status: '12 participants',
+                avatar: null,
+                isGroup: true,
+                messages: [
+                    { type: 'date', content: 'Today' },
+                    { type: 'received', content: 'Assalam O Alykum everyone!', time: '8:30 am', sender: 'Muhammad Shahid' },
+                    { type: 'received', content: 'Good morning team', time: '8:32 am', sender: 'Ahmed Ali' },
+                    { type: 'sent', content: 'Morning! Ready for today\'s coordination meeting?', time: '8:35 am' },
+                    { type: 'received', content: 'Yes, let\'s discuss the website updates', time: '8:40 am', sender: 'Sarah Khan' },
+                    { type: 'received', content: 'I have the latest designs ready', time: '10:35 am', sender: 'Muhammad Shahid' },
+                    { type: 'unread', content: 'Great! Can you share them?', time: '10:37 am', sender: 'Ahmed Ali' }
+                ]
+            },
+            'mardo-group': {
+                name: 'A-M-F MARDO 3',
+                status: '8 participants',
+                avatar: null,
+                isGroup: true,
+                messages: [
+                    { type: 'date', content: 'Today' },
+                    { type: 'received', content: '📸 A FUN FILLED DAY AT THE OFFICE!', time: '9:15 am', sender: 'Al Mohallatul Fakhira' },
+                    { type: 'received', content: 'Great photos! Thanks for sharing', time: '9:20 am', sender: 'Team Member' },
+                    { type: 'sent', content: 'Looks like everyone had a great time!', time: '9:25 am' },
+                    { type: 'received', content: 'Indeed! We should do this more often', time: '10:10 am', sender: 'Al Mohallatul Fakhira' }
+                ]
+            },
+            'skitmedia-group': {
+                name: 'Skitmedia Design Team',
+                status: '6 participants',
+                avatar: null,
+                isGroup: true,
+                messages: [
+                    { type: 'date', content: 'Today' },
+                    { type: 'system', content: 'Zeshan joined using this group\'s invite link', time: '8:45 am' },
+                    { type: 'received', content: 'Welcome to the team Zeshan!', time: '8:50 am', sender: 'Akhteer Ilyas' },
+                    { type: 'received', content: 'Thanks! Happy to be here', time: '8:55 am', sender: 'Zeshan' },
+                    { type: 'sent', content: 'Great to have you on board!', time: '9:00 am' }
+                ]
+            },
+            'mota': {
+                name: 'Mota',
+                status: 'last seen today at 1:48 am',
+                avatar: 'https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop',
+                messages: [
+                    { type: 'date', content: 'Today' },
+                    { type: 'received', content: '😂', time: '1:30 am' },
+                    { type: 'sent', content: 'Haha, that was funny!', time: '1:35 am' },
+                    { type: 'received', content: '🎉 Sticker', time: '1:48 am', isSticker: true }
+                ]
+            },
+            'izhan': {
+                name: 'Izhan Kashif',
+                status: 'last seen today at 1:41 am',
+                avatar: 'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop',
+                messages: [
+                    { type: 'date', content: 'Today' },
+                    { type: 'received', content: 'Kya bhai?', time: '1:40 am' },
+                    { type: 'sent', content: 'Sab theek hai, tum batao?', time: '1:41 am' },
+                    { type: 'received', content: 'All good here!', time: '1:41 am' }
+                ]
+            },
+            'murtaza': {
+                name: 'Murtaza Ali',
+                status: 'last seen today at 1:30 am',
+                avatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=40&h=40&fit=crop',
+                messages: [
+                    { type: 'date', content: 'Today' },
+                    { type: 'received', content: 'Are you free for a quick call?', time: '1:25 am' },
+                    { type: 'sent', content: 'Sure, call me', time: '1:28 am' },
+                    { type: 'call', content: 'Voice call', time: '1:30 am', incoming: true }
+                ]
+            }
+        };
+
+        function selectChat(chatId) {
+            // Remove active class from all chat items
+            document.querySelectorAll('.chat-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Add active class to selected chat
+            event.currentTarget.classList.add('active');
+            
+            // Get chat data
+            const chat = chatData[chatId];
+            if (!chat) return;
+            
+            // Update chat header
+            document.getElementById('chat-name').textContent = chat.name;
+            document.getElementById('chat-status').textContent = chat.status;
+            
+            // Update avatar
+            const avatarElement = document.getElementById('chat-avatar');
+            if (chat.avatar) {
+                avatarElement.src = chat.avatar;
+                avatarElement.style.display = 'block';
+            } else if (chat.isGroup) {
+                // For groups, we'll keep the group icon in the header
+                avatarElement.style.display = 'none';
+            }
+            
+            // Update messages
+            const messagesContainer = document.getElementById('chat-messages');
+            messagesContainer.innerHTML = '';
+            
+            chat.messages.forEach(message => {
+                if (message.type === 'date') {
+                    messagesContainer.innerHTML += `
+                        <div class="text-center mb-4">
+                            <span class="date-separator bg-dark text-muted px-3 py-1 rounded">${message.content}</span>
+                        </div>
+                    `;
+                } else if (message.type === 'sent') {
+                    const messageClass = message.isLong ? 'p-3' : 'p-2';
+                    messagesContainer.innerHTML += `
+                        <div class="mb-3 d-flex justify-content-end">
+                            <div class="message-sent bg-success text-white ${messageClass} rounded" ${message.isLong ? 'style="max-width: 80%;"' : ''}>
+                                ${message.isLong ? `<div class="mb-2">${message.content}</div>` : `<div class="d-flex align-items-center gap-2">`}
+                                ${message.isLong ? 
+                                    `<div class="d-flex align-items-center justify-content-end gap-2">
+                                        <small class="text-light opacity-75">${message.time}</small>
+                                        <i class="bi bi-check-all text-light"></i>
+                                    </div>` :
+                                    `<span>${message.content}</span>
+                                    <small class="text-light opacity-75">${message.time}</small>
+                                    <i class="bi bi-check-all text-light"></i>
+                                </div>`
+                                }
+                            </div>
+                        </div>
+                    `;
+                } else if (message.type === 'received' || message.type === 'unread') {
+                    const unreadClass = message.type === 'unread' ? 'border border-success' : '';
+                    messagesContainer.innerHTML += `
+                        <div class="mb-3 d-flex justify-content-start">
+                            <div class="message-received bg-secondary text-white p-2 rounded ${unreadClass}">
+                                ${message.sender ? `<div class="text-success small mb-1">${message.sender}</div>` : ''}
+                                <div class="d-flex align-items-center gap-2">
+                                    <span>${message.content}</span>
+                                    <small class="text-light opacity-75">${message.time}</small>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else if (message.type === 'call') {
+                    const callIcon = message.incoming ? 'bi-telephone-inbound text-success' : 'bi-telephone-outbound text-primary';
+                    messagesContainer.innerHTML += `
+                        <div class="mb-3 d-flex justify-content-${message.incoming ? 'start' : 'end'}">
+                            <div class="message-${message.incoming ? 'received bg-secondary' : 'sent bg-success'} text-white p-2 rounded">
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="bi ${callIcon}"></i>
+                                    <span>${message.content}</span>
+                                    <small class="text-light opacity-75">${message.time}</small>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else if (message.type === 'system') {
+                    messagesContainer.innerHTML += `
+                        <div class="text-center mb-3">
+                            <small class="text-muted">${message.content}</small>
+                        </div>
+                    `;
+                }
+            });
+            
+            // Scroll to bottom
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+        
+        // Load default chat (Ammar) on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            selectChat('ammar');
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
